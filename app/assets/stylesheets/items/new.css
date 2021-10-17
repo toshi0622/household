@@ -20,22 +20,11 @@
   align-items: center;
 }
 
-.symbol-arrow-left {
-  border-bottom: solid 4px #c0c0c0;
-  border-left: solid 4px #c0c0c0;
-  width: 24px;
-  height: 24px;
-  transform: rotate(45deg);
-  margin-left: 10px;
-  }
-
 .new-item-register{
   font-size: 53px;
   font-weight: 600;
   letter-spacing: 6px;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 185px;
 }
 /* /header */
 
@@ -150,25 +139,52 @@
 .new-item-text-content {
   width: 85%;
   height: 80px;
-  border-radius: 10px;
-  border: 1px solid;
-  border-color: #c0c0c0;
 }
 
 .new-item-text-data {
+  width: 100%;
+  height: 80px;
+}
+
+.new-item-text-data-content {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  border-color: #c0c0c0;;
   font-size: 25px;
   font-weight: 400;
   letter-spacing: 1px;
-  display: block;
-  margin-left: 18px;
-  margin-top: 18px;
+  padding-left: 18px;
+  padding-top: 18px;
 }
+
+
 /* /共通 */
 
+/* カテゴリー＆後悔度ボタン */
+
+.new-item-select {
+  width: 85%;
+  height: 80px;
+}
+
+.new-item-select-content {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  border-color: #c0c0c0;;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding-left: 18px;
+}
+/* /カテゴリー＆後悔ボタン */
+
 /* 下部ボタン */
-.edut-btn-contents {
+.sell-btn-contents {
   width: 90%;
-  text-align: center;;
+  text-align: center;
+  margin-bottom: 100px;
 }
 
 .sell-btn {
@@ -178,7 +194,6 @@
   height: 80px;
   font-size: 28px;
   letter-spacing: 1px;
-  padding-top: 20px;
   margin-top: 80px;
   margin-bottom: 50px;
   border-radius: 100px;
@@ -187,12 +202,10 @@
 .back-btn {
   background: #c0c0c0;
   color: white;
-  width: 100%;
-  height: 80px;
   font-size: 28px;
   letter-spacing: 1px;
-  padding-top: 20px;  
-  margin-bottom: 30px;
   border-radius: 100px;
+  padding: 20px 335px;
+  text-decoration: none;
 }
 /* /下部ボタン */

@@ -1,0 +1,158 @@
+  <div class='new-page-main'>
+    <%= form_with model: @item, url: items_path, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+      <div class="new-page-header">
+          <%= link_to image_tag("back_01.png", size: '50x50'), "/" %>
+        <span class="new-item-register">商品情報一覧</span>
+      </div>
+
+    <%# 商品画像 %>
+      <div class="new-item-lists">
+        <div class="new-item-list">
+          <div class="new-item-list-head">
+            <div class="new-item-list-head-content">
+              <div class="img-upload">商品画像</div>
+              <p class="optional">任意</p>
+            </div>
+          </div>
+          <div class="new-item-image-upload">
+            <div class="new-item-image-content">
+              <div class="new-item-image-data">
+                ファイルを選択してください
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%# /商品画像 %>
+
+    <%# 商品名 %>
+      <div class="new-item-lists">
+        <div class="new-item-name">
+          <div class="new-item-name-head">
+            <div class="new-item-name-head-content">
+              <div class="new-items">商品名</div>
+              <p class="mandatory">必須</p>
+            </div>
+          </div>
+          <div class="new-item-text">
+            <div class="new-item-text-content">
+              <div class="new-item-text-data">
+                入力してください
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%# /商品名 %>
+
+    <%# カテゴリー %>
+      <div class="new-item-lists">
+        <div class="new-item-name">
+          <div class="new-item-name-head">
+            <div class="new-item-name-head-content">
+              <div class="new-items">カテゴリー</div>
+              <p class="mandatory">必須</p>
+            </div>
+          </div>
+          <div class="new-item-text">
+            <div class="new-item-text-content">
+              <div class="new-item-text-data">
+                選択してください
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%# /カテゴリー %>
+
+    <%# 合計金額 %>
+      <div class="new-item-lists">
+        <div class="new-item-name">
+          <div class="new-item-name-head">
+            <div class="new-item-name-head-content">
+              <div class="new-items">合計金額</div>
+              <p class="mandatory">必須</p>
+            </div>
+          </div>
+          <div class="new-item-text">
+            <div class="new-item-text-content">
+              <div class="new-item-text-data">
+                入力してください
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%# /合計金額 %>
+
+    <%# 後悔度 %>
+      <div class="new-item-lists">
+        <div class="new-item-name">
+          <div class="new-item-name-head">
+            <div class="new-item-name-head-content">
+              <div class="new-items">後悔度</div>
+              <p class="mandatory">必須</p>
+            </div>
+          </div>
+          <div class="new-item-text">
+            <div class="new-item-text-content">
+              <div class="new-item-text-data">
+                選択してください
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%# /後悔度 %>
+
+    <%# メモ %>
+      <div class="new-item-lists">
+        <div class="new-item-name">
+          <div class="new-item-name-head">
+            <div class="new-item-name-head-content">
+              <div class="new-items">メモ</div>
+              <p class="optional">任意</p>
+            </div>
+          </div>
+          <div class="new-item-text">
+            <div class="new-item-text-content">
+              <div class="new-item-text-data">
+                入力してください
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%# /メモ %>
+
+    <%# 日付 %>
+      <div class="new-item-lists">
+        <div class="new-item-name">
+          <div class="new-item-name-head">
+            <div class="new-item-name-head-content">
+              <div class="new-items">日付</div>
+              <p class="mandatory">必須</p>
+            </div>
+          </div>
+          <div class="new-item-text">
+            <div class="new-item-text-content">
+              <div class="new-item-text-data">
+                選択してください
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%# /日付 %>
+
+    <%# 下部ボタン %>
+    <div class="new-item-lists">
+      <div class="sell-btn-contents">
+        <div class="sell-btn">登録する</div>
+        <div class="back-btn">戻る</div>
+      </div>
+    </div>
+    <%# /下部ボタン %>
+    <% end %>
+  </div>
