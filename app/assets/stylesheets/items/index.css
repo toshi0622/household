@@ -94,7 +94,7 @@
   list-style: none;
   width: 90%;
   border-bottom: 1px solid #c0c0c0;
-  padding: 16px 0 24px;
+  padding: 20px 0 20px;
 }
 
 .item-main-list-detail {
@@ -125,13 +125,18 @@
   margin-top: 12px;
 }
 
+.show-link {
+  text-decoration: none;
+}
+
 .item-main-list-detail-show {
   height: fit-content;
   color: white;
   background: #a0d8ef;
   padding: 1px 30px;
-  margin: auto 0;
+  margin: 25px 0;
   border-radius: 10px;
+  text-decoration: none;
   font-size: 30px;
   font-weight: 600;
   text-align: center;

@@ -1,0 +1,77 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 合計金額 %>
+  <div class= 'title-contents'>
+    <p class='total-fee-contents'>
+      合計金額
+    </p>
+    <p class='total-fee'>
+      ¥1,000,000
+    </p>
+    <p class='today-date'>
+      <script>
+        //今日の日付データを変数に格納
+        //変数は"today"とする
+        var today=new Date(); 
+
+        //年・月・日・曜日を取得
+        var year = today.getFullYear();
+        var month = today.getMonth()+1;
+        var week = today.getDay();
+        var day = today.getDate();
+
+        var week_ja= new Array("日","月","火","水","木","金","土");
+
+        //年・月・日を書き出す
+        document.write(year+"."+month+"."+day);
+      </script>
+      <span>現在</span>
+    </p>
+  </div>
+  <%# 合計金額 %>
+
+  <%# 登録したアイテム一覧 %>
+  <div class='item-contents'>
+    <ul class='item-lists'>
+      <% @items.each do |item| %>
+        <li class="item-list">
+          <%# <%= link_to item_path(item.id), method: :get do %>
+            <div class="item-list-head">
+              <div class="item-list-head-content">
+                <div class='registration-date'>
+                    <div class="triangle"></div> <p><%= item.calendar %></p>
+                </div>
+                <span class="fee">¥1,000</span>
+              </div>
+            </div>
+
+          <ul class="item-main-lists">
+            <li class="item-main-list">
+              <div class="item-main-list-detail">
+                <div class="item-main-list-detail-left-content">
+                  <div class="item-main-list-detail-left-content-fee">
+                    <strong>¥<%= item.price %></strong>
+                    <p><%= item.item_name%></p>
+                  </div>
+                  <p class="item-main-list-detail-left-content-tag"><%= item.item_category.name %></p>
+                </div>
+                <%= link_to item_path(item.id), class:"show-link", method: :get do %>
+                  <div class="item-main-list-detail-show">詳 細</div>
+                <% end %>
+              </div>
+            </li>
+          </ul>
+          <%# <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# 登録したアイテム一覧 %>
+
+  <%# 入力する %>
+  <%= link_to(new_item_path, class: 'purchase-btn') do %>
+    <%= image_tag 'scroll_02.png' , size: '200x200' ,class: "purchase-btn-icon" %>
+  <% end %>
+  <%# 入力する %>
+</div>
