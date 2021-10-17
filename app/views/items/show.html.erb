@@ -1,7 +1,7 @@
   <div class='show-page-main'>
     <div class="show-page-header">
-      <div class="arrow-left"></div>
-      <span class="show-items">詳細情報一覧</span>
+      <%= link_to image_tag("back_01.png", size: '50x50'), "/" %>
+      <span class="new-item-register">商品情報一覧</span>
     </div>
 
     <%# 商品画像 %>
@@ -15,7 +15,6 @@
           <div class="show-item-image-upload">
             <div class="show-item-image-content">
               <div class="show-item-image-data">
-              <%# インスタンス変数の設定 %>
               </div>
             </div>
           </div>
@@ -30,7 +29,9 @@
                 <div class='registration-date'>
                     <div class="show-name-left">商品名</div>
                 </div>
-                <span class="show-name-light">¥1,000</span>
+                <span class="show-name-light">
+                  <%= @item.item_name %>
+                </span>
           </div>
         </div>
       </div>
@@ -43,7 +44,9 @@
                 <div class='registration-date'>
                     <div class="show-name-left">カテゴリー</div>
                 </div>
-                <span class="show-name-light">趣味・娯楽</span>
+                <span class="show-name-light">
+                  <%= @item.item_category.name %>
+                </span>
           </div>
         </div>
       </div>
@@ -56,7 +59,9 @@
                 <div class='registration-date'>
                     <div class="show-name-left">合計金額</div>
                 </div>
-                <span class="show-name-light">¥10,000</span>
+                <span class="show-name-light">
+                  ¥<%= @item.price %>
+                </span>
           </div>
         </div>
       </div>
@@ -69,7 +74,9 @@
                 <div class='registration-date'>
                     <div class="show-name-left">後悔度</div>
                 </div>
-                <span class="show-name-light">★★★★★</span>
+                <span class="show-name-light">
+                  <%= @item.regret.name %>
+                </span>
           </div>
         </div>
       </div>
@@ -82,7 +89,9 @@
                 <div class='registration-date'>
                     <div class="show-name-left">メモ</div>
                 </div>
-                <span class="show-name-light">Aさん＆Bさんと飲み会</span>
+                <span class="show-name-light">
+                  <%= @item.memo%>
+                </span>
           </div>
         </div>
       </div>
@@ -95,7 +104,9 @@
                 <div class='registration-date'>
                     <div class="show-name-left">日付</div>
                 </div>
-                <span class="show-name-light">2021.10.13(水)</span>
+                <span class="show-name-light">
+                  <%= @item.calendar %>
+                </span>
           </div>
         </div>
       </div>
@@ -103,9 +114,9 @@
 
     <%# 下部ボタン %>
     <div class="new-item-lists">
-      <div class="sell-btn-contents">
-        <div class="edit-btn">編集する</div>
-        <div class="delete-btn">削除する</div>
+      <div class="show-btn-contents">
+        <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "edit-btn" %>
+        <%= link_to "削除", item_path(@item.id), method: :delete, class:"delete-btn" %>
       </div>
     </div>
     <%# /下部ボタン %>
