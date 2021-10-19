@@ -1,10 +1,13 @@
+<%# cssは商品出品のものを併用
+app/assets/stylesheets/items/new.css %>
+  
   <div class='new-page-main'>
-    <%= form_with model: @item, url: items_path, local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-      <div class="new-page-header">
-          <%= link_to image_tag("back_01.png", size: '50x50'), "/" %>
-        <span class="new-item-register">商品情報一覧</span>
-      </div>
+      <%= form_for(@item) do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
+        <div class="new-page-header">
+            <%= link_to image_tag("back_01.png", size: '50x50'), "/" %>
+          <span class="new-item-register">商品情報変更</span>
+        </div>
 
     <%# 商品画像 %>
       <div class="new-item-lists">
@@ -12,13 +15,13 @@
           <div class="new-item-list-head">
             <div class="new-item-list-head-content">
               <div class="img-upload">商品画像</div>
-              <p class="optional">任意</p>
+              <p class="mandatory">必須</p>
             </div>
           </div>
           <div class="new-item-image-upload">
             <div class="new-item-image-content">
               <div class="new-item-image-data">
-                ファイルを選択してください
+                <%= f.file_field :image, id:"item-image" %>
               </div>
             </div>
           </div>
@@ -38,7 +41,7 @@
           <div class="new-item-text">
             <div class="new-item-text-content">
               <div class="new-item-text-data">
-                入力してください
+                <%= f.text_area :item_name, class:"new-item-text-data-content", id:"item-name", placeholder:"全角文字（必須 40文字まで)", maxlength:"40" %>
               </div>
             </div>
           </div>
@@ -56,10 +59,8 @@
             </div>
           </div>
           <div class="new-item-text">
-            <div class="new-item-text-content">
-              <div class="new-item-text-data">
-                選択してください
-              </div>
+            <div class="new-item-select">
+              <%= f.collection_select(:item_category_id, ItemCategory.all, :id, :name, {}, {class:"new-item-select-content", id:"item-category"}) %>
             </div>
           </div>
         </div>
@@ -78,7 +79,7 @@
           <div class="new-item-text">
             <div class="new-item-text-content">
               <div class="new-item-text-data">
-                入力してください
+                <%= f.text_area :price, class:"new-item-text-data-content", id:"item-price", placeholder:"半角数字 例) 100" %>
               </div>
             </div>
           </div>
@@ -96,10 +97,8 @@
             </div>
           </div>
           <div class="new-item-text">
-            <div class="new-item-text-content">
-              <div class="new-item-text-data">
-                選択してください
-              </div>
+            <div class="new-item-select">
+                <%= f.collection_select(:regret_id, Regret.all, :id, :name, {}, {class:"new-item-select-content", id:"item-regret"}) %>
             </div>
           </div>
         </div>
@@ -118,7 +117,7 @@
           <div class="new-item-text">
             <div class="new-item-text-content">
               <div class="new-item-text-data">
-                入力してください
+                <%= f.text_area :memo, class:"new-item-text-data-content", id:"item-memo", placeholder:"詳細などご自由に記入下さい（任意 100文字まで)", maxlength:"100" %>
               </div>
             </div>
           </div>
@@ -138,7 +137,7 @@
           <div class="new-item-text">
             <div class="new-item-text-content">
               <div class="new-item-text-data">
-                選択してください
+                <%= f.text_area :calendar, class:"new-item-text-data-content", id:"item-calendar", placeholder:"半角数字 例) 2000-01-01" %>
               </div>
             </div>
           </div>
@@ -149,10 +148,10 @@
     <%# 下部ボタン %>
     <div class="new-item-lists">
       <div class="sell-btn-contents">
-        <div class="sell-btn">登録する</div>
-        <div class="back-btn">戻る</div>
+        <%= f.submit "変更する" ,class:"sell-btn" %>
+        <%= link_to "もどる", root_path, class:"back-btn" %>
       </div>
     </div>
     <%# /下部ボタン %>
-    <% end %>
+  <% end %>
   </div>

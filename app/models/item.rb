@@ -6,6 +6,8 @@ class Item < ApplicationRecord
   belongs_to :item_category
   belongs_to :regret
 
+  validates :image, presence: true
+
   validates :price, presence: true, format: { with: /\A[0-9]+\z/ }
   validates :price, numericality: { greater_than_or_equal_to: 10, less_than_or_equal_to: 9999999, message: "Out of setting range"}
   validates :price, numericality: { only_integer: true, message: "Half-width number." }
