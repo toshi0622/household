@@ -11,11 +11,6 @@ end
         expect(@item).to be_valid
       end
 
-      it 'imegeは空でも保存できること' do
-        @item.image = nil
-        expect(@item).to be_valid
-      end
-
       it 'メモは空でも保存できること' do
         @item.memo = nil
         expect(@item).to be_valid
@@ -24,6 +19,12 @@ end
     end
 
     context '商品情報の入力がうまく行かない時' do
+      it 'imageが空だと出品できない' do
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include "Image can't be blank"
+      end
+
       it 'nameが空だと登録できない' do
         @item.item_name = nil
         @item.valid?

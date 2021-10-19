@@ -78,10 +78,10 @@
   margin-top: 50px;
 }
 
-.show-item-image-content {
-  background-color: #ffbc7a;
-  width: 70%;
+.item-box-img {
   height: 300px;
+  width: 300px;
+  object-fit: contain;
 }
 
 .show-item-image-data {
