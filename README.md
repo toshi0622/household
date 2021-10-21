@@ -1,24 +1,8 @@
-# README
+## Application Name(h2)<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+無駄遣いSHOW
 
-Things you may want to cover:
+## Overview(h2)<br>
 
-* Ruby version
+概要/このアプリケーションでできること
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
