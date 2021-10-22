@@ -1,8 +1,8 @@
-## Application Name(h2)<br>
+#　アプリ名<br>
 
 無駄遣いSHOW
 
-## Overview(h2)<br>
+# 概要<br>
 
-概要/このアプリケーションでできること
+
 
