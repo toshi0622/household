@@ -44,7 +44,46 @@ https://household-show.herokuapp.com/
 
 # 工夫したポイント
 
+- 各ページのデザイン<br>
+- ヘッダー部分の素材<br>
+- 合計金額の出力<br>
+- 日毎に登録した商品一覧<br>
+- 「入力する」の位置(スクロールしても同じ位置に)<br>
+- 新規登録画面や編集画面においての選択肢の実装<br>
+
 # 使用技術(開発環境)
+
+### バックエンド
+
+Ruby,Ruby on Rails
+
+### フロントエンド
+
+HTML,CSS,JavaScript,Ajax
+
+### データベース
+
+MySQL,Sequel Pro
+
+### インフラ
+
+AWS
+
+### アプリケーションサーバー(本番環境)
+
+heroku
+
+### ソース管理
+
+GitHub,GitHubDesktop
+
+### テスト
+
+RSpec
+
+### エディタ
+
+VSCode
 
 # 課題や今後実装したい機能
 
