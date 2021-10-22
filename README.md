@@ -32,18 +32,19 @@ https://household-show.herokuapp.com/
 <br>
 日本だけでなく、地球全体の未来が明るくなることを祈って。。。<br>
 
-# DEMO<br>
+# DEMO
 
 #### ホーム(商品情報一覧)
-![ホーム(商品情報一覧)](画像の相対パス)
+[![Image from Gyazo](https://i.gyazo.com/423bff79b2f1911e0f0732cccfaf10b6.gif)](https://gyazo.com/423bff79b2f1911e0f0732cccfaf10b6)
 
-[![新規尾登録画面](https://i.gyazo.com/fcafbaa52692b93e39916606e71169ff.gif)](https://gyazo.com/fcafbaa52692b93e39916606e71169ff)
+#### 新規登録画面
+[![Image from Gyazo](https://i.gyazo.com/fcafbaa52692b93e39916606e71169ff.gif)](https://gyazo.com/fcafbaa52692b93e39916606e71169ff)
 
 #### 詳細表示画面
-![詳細表示画面](画像の相対パス)
+[![Image from Gyazo](https://i.gyazo.com/3044f4096eb6d363be11164038b1041f.gif)](https://gyazo.com/3044f4096eb6d363be11164038b1041f)
 
 #### 編集画面
-![編集画面](画像の相対パス)
+[![Image from Gyazo](https://i.gyazo.com/26e94611e6c3713740fc309ce97bcf46.gif)](https://gyazo.com/26e94611e6c3713740fc309ce97bcf46)
 
 # 工夫したポイント
 
