@@ -35,12 +35,15 @@ https://household-show.herokuapp.com/
 # DEMO<br>
 
 #### ホーム(商品情報一覧)
+![ホーム(商品情報一覧)](画像の相対パス)
 
-#### 新規登録画面
+[![新規尾登録画面](https://i.gyazo.com/fcafbaa52692b93e39916606e71169ff.gif)](https://gyazo.com/fcafbaa52692b93e39916606e71169ff)
 
 #### 詳細表示画面
+![詳細表示画面](画像の相対パス)
 
 #### 編集画面
+![編集画面](画像の相対パス)
 
 # 工夫したポイント
 
