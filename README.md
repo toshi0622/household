@@ -53,38 +53,53 @@ https://household-show.herokuapp.com/
 
 # 使用技術(開発環境)
 
-### バックエンド
+## バックエンド
 
 Ruby,Ruby on Rails
 
-### フロントエンド
+## フロントエンド
 
 HTML,CSS,JavaScript,Ajax
 
-### データベース
+## データベース
 
 MySQL,Sequel Pro
 
-### インフラ
+## インフラ
 
 AWS
 
-### アプリケーションサーバー(本番環境)
+## アプリケーションサーバー(本番環境)
 
 heroku
 
-### ソース管理
+## ソース管理
 
 GitHub,GitHubDesktop
 
-### テスト
+## テスト
 
 RSpec
 
-### エディタ
+## エディタ
 
 VSCode
 
 # 課題や今後実装したい機能
 
+- 検索機能①(登録した情報から引っ張ってこれるように)
+- 検索機能②(検索ワードのみピックアップ)
+- ユーザー管理機能(ログアウト状態ならば、強制的にログイン画面に遷移)
+
 # DB設計
+
+## items テーブル
+
+| Column                | Type     | Options                   |
+| --------------------- | -------- | ------------------------- |
+| item_name             |  string  | null: false               |
+| item_category_id      |  integer | null: false               |
+| price                 |  integer | null: false               |
+| regret_id             |  integer | null: false               |
+| memo                  |   text   |                           |
+| calendar              |  string  | null: false               |
