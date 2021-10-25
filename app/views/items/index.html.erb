@@ -7,7 +7,7 @@
       合計金額
     </p>
     <p class='total-fee'>
-      ¥1,000,000
+      ¥<%= @items.inject (0) {|sum, num| sum += num.price } %>
     </p>
     <p class='today-date'>
       <script>
@@ -34,41 +34,67 @@
   <%# 登録したアイテム一覧 %>
   <div class='item-contents'>
     <ul class='item-lists'>
+      <%# 今日の日付の宣言(メソッド) %>
+      <% time = Time.now %>
+
+      <%# 今日の日付の宣言(Stringに変換) %>
+      <% @today = time.year.to_s +  '-' + time.month.to_s + '-' + time.day.to_s %> 
+
+      <%# @date(配列)を作成、その中に今日の日付を代入 %>
+      <% @date = [@today] %>
+
+      <%# アイテムリストの中のアイテムをitemと宣言 %>
       <% @items.each do |item| %>
+
+        <%# もし、@dateの中にitem.calendarと同じ日付がある場合、''(何もしない)、ない場合、@dateの中にitem.calendarの日付をいれる %>
+        <% if @date.find {|arrayDate| arrayDate == item.calendar} then '' else @date.push(item.calendar) end %>
+      <% end %>
+      
+      <%# @dateの中の日付をeachDateと宣言 %>
+      <% @date.each do |eachDate| %>
+
+        <%# @parseItemを宣言、初期値として@items（アイテムリスト)の1番目を代入 %>
+        <% @parseItem = @items[0] %>
+
+          <%#　@itemsの中をフィルターし、item.calendarとeachDateが被れば、@parseItemの中に日付フィルターしたitemをいれる、無ければそのまま %>
+          <% if @items.filter{|findItem| findItem.calendar == eachDate} 
+            then @parseItem = @items.filter{|findItem| findItem.calendar == eachDate} 
+            end %>
+        
+        <%# injectで合計値を@sumに代入 %>
+        <% @sum = @parseItem.inject (0) {|sum, num| sum += num.price } %>
         <li class="item-list">
-        <script>
-        var calendar = [];
-        calendar.filter(function (x, i, self) {
-          return self.indexOf(x) === i;
-        });
-        </script>
           <div class="item-list-head">
             <div class="item-list-head-content">
               <div class='registration-date'>
-                  <div class="triangle"></div> <p><%= item.calendar %></p>
+                <div class="triangle"></div>
+                <p><%= if eachDate == @today then '今日' else eachDate end%></p>
               </div>
-              <span class="fee">¥1,000</span>
+              <span class="fee">¥<%= @sum %></span>
             </div>
           </div>
-          <ul class="item-main-lists">
-            <li class="item-main-list">
-              <div class="item-main-list-detail">
-                <div class="item-main-list-detail-left-content">
-                  <div class="item-main-list-detail-left-content-fee">
-                    <strong>¥<%= item.price %></strong>
-                    <p><%= item.item_name%></p>
+          
+          <%# @parseItemの中のアイテムをparseItemと宣言%>
+          <% @parseItem.each do |parseItem| %>
+            <ul class="item-main-lists">
+              <li class="item-main-list">
+                <div class="item-main-list-detail">
+                  <div class="item-main-list-detail-left-content">
+                    <div class="item-main-list-detail-left-content-fee">
+                      <strong>¥<%= parseItem.price %></strong> 
+                      <p><%= parseItem.item_name %></p>
+                    </div>
+                    <p class="item-main-list-detail-left-content-tag"><%= parseItem.item_category.name %></p>
                   </div>
-                  <p class="item-main-list-detail-left-content-tag"><%= item.item_category.name %></p>
+                  <%= link_to item_path(parseItem.id), class:"show-link", method: :get do %>
+                    <div class="item-main-list-detail-show">詳 細</div>
+                  <% end %>
                 </div>
-                <%= link_to item_path(item.id), class:"show-link", method: :get do %>
-                  <div class="item-main-list-detail-show">詳 細</div>
-                <% end %>
-              </div>
-            </li>
-          </ul>
-          <%# <% end %>
+              </li>
+            </ul> 
+          <% end %>
         </li>
-      <% end %>
+      <% end %>  
     </ul>
   </div>
   <%# 登録したアイテム一覧 %>
