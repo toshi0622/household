@@ -63,7 +63,7 @@ Ruby,Ruby on Rails
 
 ## フロントエンド
 
-HTML,CSS,JavaScript,Ajax
+HTML,CSS,JavaScript
 
 ## データベース
 
@@ -96,7 +96,6 @@ VSCode
 - ユーザー管理機能(ログアウト状態ならば、強制的にログイン画面に遷移)
 - 月別表示
 - 年別表示
-- グラフ表示
 
 # DB設計
 
