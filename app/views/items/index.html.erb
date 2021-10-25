@@ -7,7 +7,7 @@
       合計金額
     </p>
     <p class='total-fee'>
-      ¥1,000,000
+      ¥8,000
     </p>
     <p class='today-date'>
       <script>
@@ -36,18 +36,13 @@
     <ul class='item-lists'>
       <% @items.each do |item| %>
         <li class="item-list">
-
-        <script>
-        var calendar = [];
-        calendar.filter(function (x, i, self) {
-          return self.indexOf(x) === i;
-        });
-        </script>
-
-          <div class="item-list-head">
-            <div class="item-list-head-content">
-              <div class='registration-date'>
-                  <div class="triangle"></div> <p><%= item.calendar %></p>
+          <%# <%= link_to item_path(item.id), method: :get do %>
+            <div class="item-list-head">
+              <div class="item-list-head-content">
+                <div class='registration-date'>
+                    <div class="triangle"></div> <p><%= item.calendar %></p>
+                </div>
+                <span class="fee">¥<%= item.price %></span>
               </div>
               <span class="fee">¥1,000</span>
             </div>
